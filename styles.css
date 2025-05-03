@@ -1,4 +1,4 @@
-/* Reset some defaults */
+/* General reset and font styling */
 * {
     margin: 0;
     padding: 0;
@@ -32,7 +32,7 @@ body {
 .hero h1 {
     font-size: 4rem;
     margin-bottom: 20px;
-    color: #00FF00; /* Green accent */
+    color: #fff; /* White text */
 }
 
 .hero p {
@@ -69,7 +69,7 @@ body {
 .products h2 {
     font-size: 2.5rem;
     margin-bottom: 40px;
-    color: #00FF00; /* Green accent */
+    color: #fff; /* White text */
 }
 
 .product-grid {
@@ -94,11 +94,11 @@ body {
 
 .product-card h3 {
     margin-top: 15px;
-    color: #00FF00;
+    color: #fff; /* White text for product name */
 }
 
 .product-card p {
-    color: #ccc;
+    color: #ccc; /* Light gray text for description */
 }
 
 /* Why Choose Us Section */
@@ -111,7 +111,7 @@ body {
 .why-choose-us h2 {
     font-size: 2.5rem;
     margin-bottom: 40px;
-    color: #00FF00;
+    color: #fff; /* White text */
 }
 
 .reasons {
@@ -134,11 +134,11 @@ body {
 
 .reason h3 {
     font-size: 1.5rem;
-    color: #00FF00;
+    color: #00FF00; /* Green for icons only */
 }
 
 .reason p {
-    color: #ccc;
+    color: #ccc; /* Light gray text */
 }
 
 /* Footer */
