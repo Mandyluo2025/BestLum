@@ -1,148 +1,59 @@
-/* Reset some defaults */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+:root {
+  --primary: #00FF00;
+  --dark-bg: #000000;
+  --card-bg: #111111;
+  --text-light: #FFFFFF;
+  --text-gray: #CCCCCC;
+}
+
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
 }
 
 body {
-    background-color: #000; /* Full black background */
-    color: white; /* White text */
-    font-family: Arial, sans-serif;
+  background: var(--dark-bg);
+  color: var(--text-light);
+  line-height: 1.6;
 }
 
-/* Hero Section */
+h1, h2, h3 {
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
 .hero {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-image: url('https://via.placeholder.com/1920x1080/000000/FFFFFF?text=Hero+Image'); /* Your hero image here */
-    background-size: cover;
-    background-position: center;
-    height: 100vh;
-    color: white;
-    padding: 0 20px;
-}
-
-.hero-text {
-    flex: 1;
-    text-align: left;
+  display: flex;
+  min-height: 100vh;
+  padding: 0 5%;
+  background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+              url('hero-bg.jpg') center/cover;
 }
 
 .hero h1 {
-    font-size: 4rem;
-    margin-bottom: 20px;
-    color: #fff; /* White text */
-}
-
-.hero p {
-    font-size: 1.5rem;
-    margin-bottom: 30px;
-}
-
-.cta-button {
-    padding: 15px 30px;
-    background-color: #00FF00; /* Green button */
-    color: #000;
-    text-decoration: none;
-    font-size: 1.2rem;
-    border-radius: 5px;
-}
-
-.hero-image {
-    flex: 1;
-    text-align: right;
-}
-
-.hero-image img {
-    max-width: 100%;
-    height: auto;
-}
-
-/* Products Section */
-.products {
-    padding: 60px 20px;
-    text-align: center;
-    background-color: #000;
-}
-
-.products h2 {
-    font-size: 2.5rem;
-    margin-bottom: 40px;
-    color: #fff;
-}
-
-.product-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
 }
 
 .product-card {
-    background-color: #111;
-    padding: 20px;
-    border: 2px solid #333;
-    border-radius: 10px;
-    text-align: center;
+  transition: all 0.3s ease;
+  border: 1px solid #333;
 }
 
-.product-card img {
-    width: 100px;
-    height: 100px;
-    margin-bottom: 15px;
-    border-radius: 8px;
+.product-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--primary);
+  box-shadow: 0 10px 20px rgba(0,255,0,0.1);
 }
 
-.product-card h3 {
-    margin-top: 15px;
-    color: #fff; /* White text for product name */
-}
-
-/* Why Choose Us Section */
-.why-choose-us {
-    padding: 60px 20px;
-    background-color: #000;
-    color: white;
-}
-
-.why-choose-us h2 {
-    font-size: 2.5rem;
-    margin-bottom: 40px;
-    color: #fff;
-}
-
-.reasons {
-    display: flex;
-    justify-content: space-between;
-    gap: 30px;
-}
-
-.reason {
-    background-color: #111;
-    padding: 20px;
-    border-radius: 8px;
-    width: 30%;
-    text-align: center;
-}
-
-.reason img {
-    margin-bottom: 10px;
-}
-
-.reason h3 {
-    font-size: 1.5rem;
-    color: #00FF00; /* Green accent */
-}
-
-.reason p {
-    color: #ccc;
-}
-
-/* Footer */
-footer {
-    background-color: #111;
-    color: #666;
-    text-align: center;
-    padding: 20px;
-    font-size: 14px;
+@media (max-width: 768px) {
+  .hero { flex-direction: column; }
+  .product-grid { grid-template-columns: repeat(2, 1fr); }
+  .reasons { flex-direction: column; }
+  .reason { width: 100%; margin-bottom: 20px; }
 }
