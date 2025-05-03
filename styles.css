@@ -1,108 +1,132 @@
-/* Reset some defaults */
-body, h1, h2, h3, p, ul {
+/* General reset and font styling */
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #000; /* Full black background */
+    color: #fff; /* White text */
     font-family: Arial, sans-serif;
 }
 
-/* Page background and general text */
-body {
-    background-color: #000;
-    color: #fff;
-    line-height: 1.6;
-}
-
-/* Container spacing */
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 40px 20px;
-}
-
-/* Hero section */
+/* Hero section (Full-screen background) */
 .hero {
-    background-color: #111;
+    background-image: url('https://via.placeholder.com/1920x1080/000000/FFFFFF?text=BestLum+Lighting'); /* Sample large background image */
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     text-align: center;
-    padding: 100px 20px;
+    color: white;
 }
 
 .hero h1 {
-    font-size: 48px;
+    font-size: 4rem;
     margin-bottom: 20px;
-    color: #0f0; /* Optional: green accent for brand */
+    color: #00FF00; /* Vibrant green accent */
 }
 
 .hero p {
-    font-size: 20px;
-    color: #ccc;
+    font-size: 1.5rem;
+    margin-bottom: 30px;
 }
 
-/* Product section */
+.hero .cta-button {
+    padding: 15px 30px;
+    background-color: #00FF00; /* Green button */
+    color: #000;
+    text-decoration: none;
+    font-size: 1.2rem;
+    border-radius: 5px;
+}
+
+/* Product Section */
 .products {
-    background-color: #000;
     padding: 60px 20px;
+    text-align: center;
 }
 
 .products h2 {
-    text-align: center;
-    font-size: 36px;
+    font-size: 2.5rem;
     margin-bottom: 40px;
-    color: #0f0;
+    color: #fff;
 }
 
 .product-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 30px;
 }
 
 .product-card {
     background-color: #111;
-    border: 1px solid #333;
-    border-radius: 10px;
     padding: 20px;
+    border: 2px solid #333;
+    border-radius: 10px;
     text-align: center;
+}
+
+.product-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
 }
 
 .product-card h3 {
-    margin-bottom: 10px;
-    color: #fff;
+    margin-top: 15px;
+    color: #00FF00; /* Green accent */
 }
 
 .product-card p {
-    color: #aaa;
-}
-
-/* Why Choose Us section */
-.why-choose-us {
-    background-color: #111;
-    padding: 60px 20px;
-}
-
-.why-choose-us h2 {
-    text-align: center;
-    font-size: 36px;
-    margin-bottom: 30px;
-    color: #0f0;
-}
-
-.why-choose-us ul {
-    max-width: 800px;
-    margin: 0 auto;
-    list-style-type: disc;
-    padding-left: 20px;
     color: #ccc;
 }
 
-.why-choose-us li {
-    margin-bottom: 10px;
+/* Why Choose Us Section */
+.why-choose-us {
+    padding: 60px 20px;
+    background-color: #000; /* Full black background */
+    color: white;
+}
+
+.why-choose-us h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: #00FF00; /* Green accent */
+}
+
+.reasons {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.reason {
+    background-color: #111;
+    padding: 20px;
+    border-radius: 8px;
+    width: 30%;
+    text-align: center;
+}
+
+.reason h3 {
+    font-size: 1.5rem;
+    color: #00FF00; /* Green accent */
+}
+
+.reason p {
+    color: #ccc;
 }
 
 /* Footer */
 footer {
-    background-color: #000;
+    background-color: #111;
     color: #666;
     text-align: center;
     padding: 20px;
     font-size: 14px;
 }
+
