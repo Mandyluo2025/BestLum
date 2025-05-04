@@ -1,4 +1,4 @@
-/* Reset & Base Styles */
+/* Base Styles */
 * {
     margin: 0;
     padding: 0;
@@ -13,26 +13,55 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    text-align: center;
+    overflow: hidden;
 }
 
-/* Container */
-.container {
-    max-width: 1200px;
-    padding: 2rem;
+/* Light Effect */
+body::before {
+    content: "";
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    background: 
+        radial-gradient(circle at 70% 30%, 
+            rgba(0,255,0,0.15) 0%, 
+            transparent 40%);
+    animation: lightMove 15s infinite alternate;
+    z-index: -1;
 }
 
-/* Typography */
-h1 {
+/* Animations */
+@keyframes lightMove {
+    0% { transform: translate(-10%, -10%); }
+    100% { transform: translate(10%, 10%); }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(0,255,0,0.7); }
+    70% { transform: scale(1.05); box-shadow: 0 0 0 15px rgba(0,255,0,0); }
+    100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(0,255,0,0); }
+}
+
+@keyframes glow {
+    0% { filter: drop-shadow(0 0 5px rgba(0,255,0,0.3)); }
+    100% { filter: drop-shadow(0 0 20px rgba(0,255,0,0.7)); }
+}
+
+/* Text Animation */
+.title-animate {
     font-size: clamp(2.5rem, 5vw, 4rem);
     font-weight: 700;
     margin-bottom: 1rem;
+    animation: fadeIn 1.2s ease-out;
 }
 
-.tagline {
-    font-size: 1.25rem;
-    margin-bottom: 2rem;
-    opacity: 0.9;
+.fade-in {
+    animation: fadeIn 1.5s ease-out 0.3s both;
 }
 
 /* Button */
@@ -44,16 +73,15 @@ h1 {
     font-weight: 700;
     text-decoration: none;
     border-radius: 4px;
-    transition: all 0.3s;
+    margin: 2rem 0;
 }
 
-.cta-button:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(0,255,0,0.3);
+.pulse {
+    animation: pulse 2s infinite;
 }
 
-/* Image Styling */
+/* Image */
 .product-img {
-    max-width: 300px;
-    margin-top: 2rem;
+    max-width: min(80vw, 400px);
+    animation: glow 2s infinite alternate;
 }
