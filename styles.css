@@ -1,27 +1,21 @@
-/* 变量定义 */
 :root {
     --primary: #00FF00;
     --dark: #000000;
-    --card-bg: #111111;
 }
 
-/* 基础样式 */
 body {
     margin: 0;
     font-family: 'Poppins', sans-serif;
     background: var(--dark);
     color: white;
-    line-height: 1.6;
 }
 
-/* Hero区样式 */
 .hero {
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
-    overflow: hidden;
 }
 
 .hero::before {
@@ -35,29 +29,27 @@ body {
     animation: pulse 8s infinite alternate;
 }
 
-/* 产品网格样式 */
-.product-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-    padding: 2rem;
-}
-
-/* 优势点样式 */
-.advantage-container {
-    display: flex;
-    justify-content: space-around;
-}
-
-/* 动画定义 */
 @keyframes pulse {
     0% { opacity: 0.3; }
     100% { opacity: 0.7; }
 }
 
-/* 媒体查询 */
-@media (max-width: 768px) {
-    .product-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
+.hero-content {
+    text-align: center;
+    z-index: 1;
+}
+
+h1 {
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    color: var(--primary);
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 15px 30px;
+    background: var(--primary);
+    color: var(--dark);
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 4px;
 }
