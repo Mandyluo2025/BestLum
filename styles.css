@@ -1,87 +1,55 @@
-/* Base Styles */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+.hero {
+  background-color: #000;
+  color: #fff;
+  padding: 60px 20px;
 }
 
-body {
-    font-family: 'Poppins', sans-serif;
-    background-color: #000;
-    color: #FFF;
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
+.hero-content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-/* Light Effect */
-body::before {
-    content: "";
-    position: absolute;
-    width: 200%;
-    height: 200%;
-    background: 
-        radial-gradient(circle at 70% 30%, 
-            rgba(0,255,0,0.15) 0%, 
-            transparent 40%);
-    animation: lightMove 15s infinite alternate;
-    z-index: -1;
+.text-content {
+  flex: 1 1 45%;
 }
 
-/* Animations */
-@keyframes lightMove {
-    0% { transform: translate(-10%, -10%); }
-    100% { transform: translate(10%, 10%); }
+.text-content h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
 }
 
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
+.text-content p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
 }
 
-@keyframes pulse {
-    0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(0,255,0,0.7); }
-    70% { transform: scale(1.05); box-shadow: 0 0 0 15px rgba(0,255,0,0); }
-    100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(0,255,0,0); }
-}
-
-@keyframes glow {
-    0% { filter: drop-shadow(0 0 5px rgba(0,255,0,0.3)); }
-    100% { filter: drop-shadow(0 0 20px rgba(0,255,0,0.7)); }
-}
-
-/* Text Animation */
-.title-animate {
-    font-size: clamp(2.5rem, 5vw, 4rem);
-    font-weight: 700;
-    margin-bottom: 1rem;
-    animation: fadeIn 1.2s ease-out;
-}
-
-.fade-in {
-    animation: fadeIn 1.5s ease-out 0.3s both;
-}
-
-/* Button */
 .cta-button {
-    display: inline-block;
-    padding: 1rem 2.5rem;
-    background: #00FF00;
-    color: #000;
-    font-weight: 700;
-    text-decoration: none;
-    border-radius: 4px;
-    margin: 2rem 0;
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: #00cc66;
+  color: #000;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
 }
 
-.pulse {
-    animation: pulse 2s infinite;
+.cta-button:hover {
+  background-color: #00b359;
 }
 
-/* Image */
-.product-img {
-    max-width: min(80vw, 400px);
-    animation: glow 2s infinite alternate;
+.image-content {
+  flex: 1 1 45%;
+  text-align: right;
 }
+
+.image-content img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+}
+
